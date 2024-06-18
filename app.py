@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.config.from_object(Config)
 db.init_app(app)  # Initialize db with the Flask app
 migrate = Migrate(app, db)
-
+app.debug = False
 # Routes
 @app.route('/')
 def home():
